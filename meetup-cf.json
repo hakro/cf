@@ -41,7 +41,7 @@
           {
             "Key": "Environment",
             "Value": {
-              "Ref": "StackEnvironment"
+              "Ref": "Environment"
             }
           }
 	],
