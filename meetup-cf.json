@@ -31,6 +31,7 @@
         "ImageId": "ami-fe408091",
         "InstanceType": "t2.small",
 	"KeyName": "hakim.rouatbi",
+	"IamInstanceProfile": "CodeDeployInstanceProfile",
         "SecurityGroups": [
           {
             "Ref": "SecurityGroup"
