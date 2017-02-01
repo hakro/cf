@@ -28,7 +28,7 @@
     "Webserver": {
       "Type": "AWS::EC2::Instance",
       "Properties": {
-        "ImageId": "ami-5900cc36",
+        "ImageId": "ami-fe408091",
         "InstanceType": "t2.small",
 	"KeyName": "hakim.rouatbi",
         "SecurityGroups": [
@@ -42,7 +42,15 @@
               "",
               [
                 "#!/bin/bash\n",
-                "apt install -y apache2 php7.0 libapache2-mod-php7.0"
+                "apt update && apt install -y apache2 php7.0 libapache2-mod-php7.0\n",
+		"echo '<?php phpinfo();' > /var/www/html/info.php\n",
+
+                "# Install CodeDeploy Agent and configure it\n",
+                "cd /tmp\n",
+                "wget https://aws-codedeploy-eu-west-1.s3.amazonaws.com/latest/install\n",
+                "chmod +x ./install\n",
+                "./install auto\n",
+                "service codedeploy-agent start\n"
               ]
             ]
           }
