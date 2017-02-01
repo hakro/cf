@@ -42,7 +42,7 @@
               "",
               [
                 "#!/bin/bash\n",
-                "apt update && apt install -y apache2 php7.0 libapache2-mod-php7.0\n",
+                "apt update && apt install -y ruby apache2 php7.0 libapache2-mod-php7.0\n",
 		"echo '<?php phpinfo();' > /var/www/html/info.php\n",
 
                 "# Install CodeDeploy Agent and configure it\n",
